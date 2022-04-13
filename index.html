@@ -66,10 +66,17 @@
 
         var a = Number(document.getElementById("a").value);
         var b = Number(document.getElementById("b").value);
-        var resultado = a + b;
+        var resultado = roundNumber(a + b, 12);
 
         document.getElementById("questao_1").innerHTML = "Resultado: A soma dos 2 valores é " + resultado;
 
+    }
+
+    function roundNumber(number, decimals) {
+        
+        var newnumber = new Number(number + '').toFixed(parseInt(decimals));
+        return parseFloat(newnumber); 
+    
     }
 
     function calculate(){
@@ -89,7 +96,7 @@
         var f = Number(document.getElementById("fuel").value);
         var resultado = d / f;
 
-        document.getElementById("questao_3").innerHTML = "Resultado: O automóvel fez o consumo médio de " + resultado + "km/l";
+        document.getElementById("questao_3").innerHTML = "Resultado: O automóvel fez o consumo médio de " + resultado + " km/l";
     }
         
 </script>
